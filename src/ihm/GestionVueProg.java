@@ -5,6 +5,8 @@
  */
 package ihm;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pierr
@@ -27,96 +29,114 @@ public class GestionVueProg extends GestionVueAbstraite {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        mainPanel = new javax.swing.JPanel();
+        matriculePanel = new javax.swing.JPanel();
+        matriculeLabel = new javax.swing.JLabel();
+        matriculeTextField = new javax.swing.JTextField();
+        mainMenu = new javax.swing.JMenuBar();
+        progMenu = new javax.swing.JMenu();
+        afficherMenuItem = new javax.swing.JMenuItem();
+        modifierMenuItem = new javax.swing.JMenuItem();
+        supprimerMenuItem = new javax.swing.JMenuItem();
+        ajouterMenuItem = new javax.swing.JMenuItem();
+        ActionMenu = new javax.swing.JMenu();
+        quitterMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
+        mainPanel.setLayout(mainPanelLayout);
+        mainPanelLayout.setHorizontalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 601, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        mainPanelLayout.setVerticalGroup(
+            mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 297, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        matriculePanel.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Matricule");
-        jLabel1.setAlignmentY(0.0F);
+        matriculeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        matriculeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        matriculeLabel.setText("Matricule");
+        matriculeLabel.setAlignmentY(0.0F);
 
-        jTextField1.setText("0");
+        matriculeTextField.setText("0");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout matriculePanelLayout = new javax.swing.GroupLayout(matriculePanel);
+        matriculePanel.setLayout(matriculePanelLayout);
+        matriculePanelLayout.setHorizontalGroup(
+            matriculePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(matriculePanelLayout.createSequentialGroup()
+                .addComponent(matriculeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(matriculeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        matriculePanelLayout.setVerticalGroup(
+            matriculePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, matriculePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(matriculeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addComponent(matriculeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenu1.setText("Programmeur");
+        progMenu.setText("Programmeur");
 
-        jMenuItem1.setText("Afficher");
-        jMenu1.add(jMenuItem1);
+        afficherMenuItem.setText("Afficher");
+        progMenu.add(afficherMenuItem);
 
-        jMenuItem2.setText("Modifier");
-        jMenu1.add(jMenuItem2);
+        modifierMenuItem.setText("Modifier");
+        progMenu.add(modifierMenuItem);
 
-        jMenuItem3.setText("Supprimer");
-        jMenu1.add(jMenuItem3);
+        supprimerMenuItem.setText("Supprimer");
+        progMenu.add(supprimerMenuItem);
 
-        jMenuItem4.setText("Ajouter");
-        jMenu1.add(jMenuItem4);
+        ajouterMenuItem.setText("Ajouter");
+        progMenu.add(ajouterMenuItem);
 
-        jMenuBar1.add(jMenu1);
+        mainMenu.add(progMenu);
 
-        jMenu2.setText("Action");
-        jMenuBar1.add(jMenu2);
+        ActionMenu.setText("Action");
 
-        setJMenuBar(jMenuBar1);
+        quitterMenuItem.setText("Quitter");
+        quitterMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitterMenuItemActionPerformed(evt);
+            }
+        });
+        ActionMenu.add(quitterMenuItem);
+
+        mainMenu.add(ActionMenu);
+
+        setJMenuBar(mainMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(matriculePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(matriculePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void quitterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterMenuItemActionPerformed
+        int result = JOptionPane.showConfirmDialog(this,"Vérification" , "Voulez-vous vraiment quitter?",JOptionPane.YES_NO_OPTION);
+        if(result == JOptionPane.OK_OPTION) {
+            //ferme
+            this.dispose();
+        }
+    }//GEN-LAST:event_quitterMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,16 +174,17 @@ public class GestionVueProg extends GestionVueAbstraite {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenu ActionMenu;
+    private javax.swing.JMenuItem afficherMenuItem;
+    private javax.swing.JMenuItem ajouterMenuItem;
+    private javax.swing.JMenuBar mainMenu;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel matriculeLabel;
+    private javax.swing.JPanel matriculePanel;
+    private javax.swing.JTextField matriculeTextField;
+    private javax.swing.JMenuItem modifierMenuItem;
+    private javax.swing.JMenu progMenu;
+    private javax.swing.JMenuItem quitterMenuItem;
+    private javax.swing.JMenuItem supprimerMenuItem;
     // End of variables declaration//GEN-END:variables
 }
