@@ -13,21 +13,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Afficher"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="modifierMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modifier"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modifierMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="supprimerMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Supprimer"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="supprimerMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ajouterMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ajouterMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -93,15 +105,198 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="601" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="nomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="adresseLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="responsableLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="hobbyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="nomTextField" max="32767" attributes="0"/>
+                      <Component id="adresseTextField" max="32767" attributes="0"/>
+                      <Component id="responsableTextField" max="32767" attributes="0"/>
+                      <Component id="hobbyTextField" pref="78" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="prenomLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="pseudoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="naissLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="embLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="prenomTextField" max="32767" attributes="0"/>
+                              <Component id="pseudoTextField" pref="78" max="32767" attributes="0"/>
+                              <Component id="jourNaissTextField" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jourEmbTextField" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="anneeNaissTextField" pref="45" max="32767" attributes="0"/>
+                      <Component id="anneeEmbTextField" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="297" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="nomLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prenomLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="prenomTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="adresseLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pseudoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="adresseTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="pseudoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="responsableLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="naissLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="responsableTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jourNaissTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="anneeNaissTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="hobbyLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="embLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="hobbyTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jourEmbTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="anneeEmbTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="129" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="nomLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nom"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="adresseLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Adresse"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="responsableLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Responsable"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="hobbyLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Hobby"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="prenomLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pr&#xe9;nom"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="pseudoLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pseudo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="naissLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date de naissance"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="embLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date d&apos;embauche"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="nomTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="adresseTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="responsableTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="hobbyTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="prenomTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="pseudoTextField">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jourNaissTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jour"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jourEmbTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jour"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="anneeNaissTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ann&#xe9;e"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="anneeEmbTextField">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ann&#xe9;e"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox2">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="matriculePanel">
       <Properties>
@@ -117,7 +312,7 @@
                   <Component id="matriculeLabel" min="-2" pref="62" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="matriculeTextField" min="-2" pref="79" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="462" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

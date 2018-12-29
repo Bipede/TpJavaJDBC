@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author pierr
+ * @author pierre
  */
 public class GestionVueProg extends GestionVueAbstraite {
 
@@ -30,6 +30,26 @@ public class GestionVueProg extends GestionVueAbstraite {
     private void initComponents() {
 
         mainPanel = new javax.swing.JPanel();
+        nomLabel = new javax.swing.JLabel();
+        adresseLabel = new javax.swing.JLabel();
+        responsableLabel = new javax.swing.JLabel();
+        hobbyLabel = new javax.swing.JLabel();
+        prenomLabel = new javax.swing.JLabel();
+        pseudoLabel = new javax.swing.JLabel();
+        naissLabel = new javax.swing.JLabel();
+        embLabel = new javax.swing.JLabel();
+        nomTextField = new javax.swing.JTextField();
+        adresseTextField = new javax.swing.JTextField();
+        responsableTextField = new javax.swing.JTextField();
+        hobbyTextField = new javax.swing.JTextField();
+        prenomTextField = new javax.swing.JTextField();
+        pseudoTextField = new javax.swing.JTextField();
+        jourNaissTextField = new javax.swing.JTextField();
+        jourEmbTextField = new javax.swing.JTextField();
+        anneeNaissTextField = new javax.swing.JTextField();
+        anneeEmbTextField = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
         matriculePanel = new javax.swing.JPanel();
         matriculeLabel = new javax.swing.JLabel();
         matriculeTextField = new javax.swing.JTextField();
@@ -44,15 +64,108 @@ public class GestionVueProg extends GestionVueAbstraite {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        nomLabel.setText("Nom");
+
+        adresseLabel.setText("Adresse");
+
+        responsableLabel.setText("Responsable");
+
+        hobbyLabel.setText("Hobby");
+
+        prenomLabel.setText("Prénom");
+
+        pseudoLabel.setText("Pseudo");
+
+        naissLabel.setText("Date de naissance");
+
+        embLabel.setText("Date d'embauche");
+
+        jourNaissTextField.setText("jour");
+
+        jourEmbTextField.setText("jour");
+
+        anneeNaissTextField.setText("année");
+
+        anneeEmbTextField.setText("année");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nomLabel)
+                    .addComponent(adresseLabel)
+                    .addComponent(responsableLabel)
+                    .addComponent(hobbyLabel))
+                .addGap(24, 24, 24)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nomTextField)
+                    .addComponent(adresseTextField)
+                    .addComponent(responsableTextField)
+                    .addComponent(hobbyTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(prenomLabel)
+                    .addComponent(pseudoLabel)
+                    .addComponent(naissLabel)
+                    .addComponent(embLabel))
+                .addGap(21, 21, 21)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(prenomTextField)
+                            .addComponent(pseudoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                            .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(anneeEmbTextField))
+                .addGap(37, 37, 37))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 297, Short.MAX_VALUE)
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomLabel)
+                    .addComponent(prenomLabel)
+                    .addComponent(nomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prenomTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(adresseLabel)
+                    .addComponent(pseudoLabel)
+                    .addComponent(adresseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pseudoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(responsableLabel)
+                    .addComponent(naissLabel)
+                    .addComponent(responsableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hobbyLabel)
+                    .addComponent(embLabel)
+                    .addComponent(hobbyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(anneeEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         matriculePanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -72,7 +185,7 @@ public class GestionVueProg extends GestionVueAbstraite {
                 .addComponent(matriculeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(matriculeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 462, Short.MAX_VALUE))
         );
         matriculePanelLayout.setVerticalGroup(
             matriculePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,15 +197,35 @@ public class GestionVueProg extends GestionVueAbstraite {
         progMenu.setText("Programmeur");
 
         afficherMenuItem.setText("Afficher");
+        afficherMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afficherMenuItemActionPerformed(evt);
+            }
+        });
         progMenu.add(afficherMenuItem);
 
         modifierMenuItem.setText("Modifier");
+        modifierMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierMenuItemActionPerformed(evt);
+            }
+        });
         progMenu.add(modifierMenuItem);
 
         supprimerMenuItem.setText("Supprimer");
+        supprimerMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerMenuItemActionPerformed(evt);
+            }
+        });
         progMenu.add(supprimerMenuItem);
 
         ajouterMenuItem.setText("Ajouter");
+        ajouterMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajouterMenuItemActionPerformed(evt);
+            }
+        });
         progMenu.add(ajouterMenuItem);
 
         mainMenu.add(progMenu);
@@ -138,9 +271,27 @@ public class GestionVueProg extends GestionVueAbstraite {
         }
     }//GEN-LAST:event_quitterMenuItemActionPerformed
 
+    private void afficherMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherMenuItemActionPerformed
+        
+    }//GEN-LAST:event_afficherMenuItemActionPerformed
+
+    private void modifierMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierMenuItemActionPerformed
+        
+    }//GEN-LAST:event_modifierMenuItemActionPerformed
+
+    private void supprimerMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerMenuItemActionPerformed
+        
+    }//GEN-LAST:event_supprimerMenuItemActionPerformed
+
+    private void ajouterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterMenuItemActionPerformed
+        
+    }//GEN-LAST:event_ajouterMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    //to delete
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -175,16 +326,36 @@ public class GestionVueProg extends GestionVueAbstraite {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu ActionMenu;
+    private javax.swing.JLabel adresseLabel;
+    private javax.swing.JTextField adresseTextField;
     private javax.swing.JMenuItem afficherMenuItem;
     private javax.swing.JMenuItem ajouterMenuItem;
+    private javax.swing.JTextField anneeEmbTextField;
+    private javax.swing.JTextField anneeNaissTextField;
+    private javax.swing.JLabel embLabel;
+    private javax.swing.JLabel hobbyLabel;
+    private javax.swing.JTextField hobbyTextField;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JTextField jourEmbTextField;
+    private javax.swing.JTextField jourNaissTextField;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel matriculeLabel;
     private javax.swing.JPanel matriculePanel;
     private javax.swing.JTextField matriculeTextField;
     private javax.swing.JMenuItem modifierMenuItem;
+    private javax.swing.JLabel naissLabel;
+    private javax.swing.JLabel nomLabel;
+    private javax.swing.JTextField nomTextField;
+    private javax.swing.JLabel prenomLabel;
+    private javax.swing.JTextField prenomTextField;
     private javax.swing.JMenu progMenu;
+    private javax.swing.JLabel pseudoLabel;
+    private javax.swing.JTextField pseudoTextField;
     private javax.swing.JMenuItem quitterMenuItem;
+    private javax.swing.JLabel responsableLabel;
+    private javax.swing.JTextField responsableTextField;
     private javax.swing.JMenuItem supprimerMenuItem;
     // End of variables declaration//GEN-END:variables
 }
