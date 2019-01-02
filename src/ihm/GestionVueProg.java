@@ -50,6 +50,10 @@ public class GestionVueProg extends GestionVueAbstraite {
         anneeEmbTextField = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
+        rechercherButton = new javax.swing.JButton();
+        reinitButton = new javax.swing.JButton();
+        validerButton = new javax.swing.JButton();
+        annulerButton = new javax.swing.JButton();
         matriculePanel = new javax.swing.JPanel();
         matriculeLabel = new javax.swing.JLabel();
         matriculeTextField = new javax.swing.JTextField();
@@ -59,10 +63,11 @@ public class GestionVueProg extends GestionVueAbstraite {
         modifierMenuItem = new javax.swing.JMenuItem();
         supprimerMenuItem = new javax.swing.JMenuItem();
         ajouterMenuItem = new javax.swing.JMenuItem();
-        ActionMenu = new javax.swing.JMenu();
+        actionMenu = new javax.swing.JMenu();
         quitterMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GesProg");
 
         nomLabel.setText("Nom");
 
@@ -80,17 +85,45 @@ public class GestionVueProg extends GestionVueAbstraite {
 
         embLabel.setText("Date d'embauche");
 
-        jourNaissTextField.setText("jour");
+        jourNaissTextField.setToolTipText("jour");
 
-        jourEmbTextField.setText("jour");
+        jourEmbTextField.setToolTipText("jour");
 
-        anneeNaissTextField.setText("année");
+        anneeNaissTextField.setToolTipText("année");
 
-        anneeEmbTextField.setText("année");
+        anneeEmbTextField.setToolTipText("année");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        rechercherButton.setText("Rechercher");
+        rechercherButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rechercherButtonActionPerformed(evt);
+            }
+        });
+
+        reinitButton.setText("Réinitialiser");
+        reinitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reinitButtonActionPerformed(evt);
+            }
+        });
+
+        validerButton.setText("Valider");
+        validerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validerButtonActionPerformed(evt);
+            }
+        });
+
+        annulerButton.setText("Annuler");
+        annulerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                annulerButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -99,40 +132,52 @@ public class GestionVueProg extends GestionVueAbstraite {
             .addGroup(mainPanelLayout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nomLabel)
-                    .addComponent(adresseLabel)
-                    .addComponent(responsableLabel)
-                    .addComponent(hobbyLabel))
-                .addGap(24, 24, 24)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nomTextField)
-                    .addComponent(adresseTextField)
-                    .addComponent(responsableTextField)
-                    .addComponent(hobbyTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(prenomLabel)
-                    .addComponent(pseudoLabel)
-                    .addComponent(naissLabel)
-                    .addComponent(embLabel))
-                .addGap(21, 21, 21)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nomLabel)
+                            .addComponent(adresseLabel)
+                            .addComponent(responsableLabel)
+                            .addComponent(hobbyLabel))
+                        .addGap(24, 24, 24)
                         .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(prenomTextField)
-                            .addComponent(pseudoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                            .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nomTextField)
+                            .addComponent(adresseTextField)
+                            .addComponent(responsableTextField)
+                            .addComponent(hobbyTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(prenomLabel)
+                            .addComponent(pseudoLabel)
+                            .addComponent(naissLabel)
+                            .addComponent(embLabel))
+                        .addGap(21, 21, 21)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(prenomTextField)
+                                    .addComponent(pseudoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                                    .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(mainPanelLayout.createSequentialGroup()
+                                .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(anneeNaissTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                            .addComponent(anneeEmbTextField))
+                        .addGap(37, 37, 37))
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                    .addComponent(anneeEmbTextField))
-                .addGap(37, 37, 37))
+                        .addGap(44, 44, 44)
+                        .addComponent(rechercherButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(reinitButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(validerButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(annulerButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +210,13 @@ public class GestionVueProg extends GestionVueAbstraite {
                     .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(anneeEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rechercherButton)
+                    .addComponent(reinitButton)
+                    .addComponent(validerButton)
+                    .addComponent(annulerButton))
+                .addContainerGap())
         );
 
         matriculePanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -230,7 +281,7 @@ public class GestionVueProg extends GestionVueAbstraite {
 
         mainMenu.add(progMenu);
 
-        ActionMenu.setText("Action");
+        actionMenu.setText("Action");
 
         quitterMenuItem.setText("Quitter");
         quitterMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -238,9 +289,9 @@ public class GestionVueProg extends GestionVueAbstraite {
                 quitterMenuItemActionPerformed(evt);
             }
         });
-        ActionMenu.add(quitterMenuItem);
+        actionMenu.add(quitterMenuItem);
 
-        mainMenu.add(ActionMenu);
+        mainMenu.add(actionMenu);
 
         setJMenuBar(mainMenu);
 
@@ -287,6 +338,22 @@ public class GestionVueProg extends GestionVueAbstraite {
         
     }//GEN-LAST:event_ajouterMenuItemActionPerformed
 
+    private void rechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherButtonActionPerformed
+        
+    }//GEN-LAST:event_rechercherButtonActionPerformed
+
+    private void reinitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitButtonActionPerformed
+        
+    }//GEN-LAST:event_reinitButtonActionPerformed
+
+    private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
+        
+    }//GEN-LAST:event_validerButtonActionPerformed
+
+    private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
+        
+    }//GEN-LAST:event_annulerButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -325,13 +392,14 @@ public class GestionVueProg extends GestionVueAbstraite {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu ActionMenu;
+    private javax.swing.JMenu actionMenu;
     private javax.swing.JLabel adresseLabel;
     private javax.swing.JTextField adresseTextField;
     private javax.swing.JMenuItem afficherMenuItem;
     private javax.swing.JMenuItem ajouterMenuItem;
     private javax.swing.JTextField anneeEmbTextField;
     private javax.swing.JTextField anneeNaissTextField;
+    private javax.swing.JButton annulerButton;
     private javax.swing.JLabel embLabel;
     private javax.swing.JLabel hobbyLabel;
     private javax.swing.JTextField hobbyTextField;
@@ -354,8 +422,11 @@ public class GestionVueProg extends GestionVueAbstraite {
     private javax.swing.JLabel pseudoLabel;
     private javax.swing.JTextField pseudoTextField;
     private javax.swing.JMenuItem quitterMenuItem;
+    private javax.swing.JButton rechercherButton;
+    private javax.swing.JButton reinitButton;
     private javax.swing.JLabel responsableLabel;
     private javax.swing.JTextField responsableTextField;
     private javax.swing.JMenuItem supprimerMenuItem;
+    private javax.swing.JButton validerButton;
     // End of variables declaration//GEN-END:variables
 }
