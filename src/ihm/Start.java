@@ -21,7 +21,7 @@ public class Start {
 //        DataTransac dt = new DataTransac();
 //        dt.addProgrammeur(new ProgrammeurBean(123, "jean", "sbthre", "18 ruesde", "shsgqz", "gqzgqzgqr", "sdfgergzg", new java.util.Date(), new java.util.Date()));
 //        System.out.println(dt.afficherProgrammeurs());
-        GestionVue vue = new GestionVue();
+        test vue = new test();
         vue.setVisible(true);
     }
     

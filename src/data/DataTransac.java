@@ -48,6 +48,7 @@ public class DataTransac implements ActionsDB {
      * @param req La requête SQL que l'on souhaite exécuter
      * @return rs Une variable de type ResultSet
      */
+    @Override
     public ResultSet getResultSet(String req) {
         try {
             stmt = dbConn.createStatement();
@@ -64,6 +65,7 @@ public class DataTransac implements ActionsDB {
      *
      * @return listeProgrammeurs Une variable de type ArryList
      */
+    @Override
     public ArrayList getProgrammeurs() {
         rs = this.getResultSet(Const.REQUETE_TOUS);
         listeProgrammeurs = new ArrayList<>();
@@ -71,7 +73,7 @@ public class DataTransac implements ActionsDB {
         try {
             while (rs.next()) {
                 prog = new ProgrammeurBean();
-                prog.setId(rs.getInt("MATRICULE"));
+                prog.setMatricule(rs.getInt("MATRICULE"));
                 prog.setPrenom(rs.getString("PRENOM"));
                 prog.setNom(rs.getString("NOM"));
                 prog.setAdresse(rs.getString("ADRESSE"));
@@ -93,19 +95,20 @@ public class DataTransac implements ActionsDB {
      * programmeur sous la forme d'un Java Bean Cette méthode est utilisée pour
      * rechercher un progammeur via son matricule
      *
-     * @param id L'id saisi par l'utilisateur pour lancer la recherche
+     * @param matricule Le matricule saisi par l'utilisateur pour lancer la recherche
      * @return prog Une variable de type ProgrammeurBean
      *
      */
-    public ProgrammeurBean getProgrammeur(int id) {
+    @Override
+    public ProgrammeurBean getProgrammeur(int matricule) {
         try {
             pstmt = dbConn.prepareStatement(Const.REQUETE_UNIQUE);
-            pstmt.setInt(1, id);
+            pstmt.setInt(1, matricule);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
                 prog = new ProgrammeurBean();
-                prog.setId(rs.getInt("MATRICULE"));
+                prog.setMatricule(rs.getInt("MATRICULE"));
                 prog.setPrenom(rs.getString("PRENOM"));
                 prog.setNom(rs.getString("NOM"));
                 prog.setAdresse(rs.getString("ADRESSE"));
@@ -121,21 +124,24 @@ public class DataTransac implements ActionsDB {
         return prog;
     }
     
-    public void deleteProgrammeur(int id) {
+    @Override
+    public void deleteProgrammeur(int matricule) throws SQLException{
         try {
             pstmt = dbConn.prepareStatement(Const.REQUETE_DELETE);
-            pstmt.setInt(1, id);
-            rs = pstmt.executeQuery();
+            pstmt.setInt(1, matricule);
+            pstmt.executeUpdate();
         } catch (SQLException sqle) {
             Logger.getLogger(DataTransac.class.getName()).log(Level.SEVERE, null, sqle);
+            throw sqle;
         }
     }
     
-    public void addProgrammeur(ProgrammeurBean prog) {
+    @Override
+    public void addProgrammeur(ProgrammeurBean prog) throws SQLException{
  
         try {
             pstmt = dbConn.prepareStatement(Const.REQUETE_INSERT);
-            pstmt.setString(1, Integer.toString(prog.getId()));
+            pstmt.setString(1, Integer.toString(prog.getMatricule()));
             pstmt.setString(2, prog.getNom());
             pstmt.setString(3, prog.getPrenom());
             pstmt.setString(4, prog.getAdresse());
@@ -147,24 +153,28 @@ public class DataTransac implements ActionsDB {
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw e;
         }
     }
     
-    public void modifyProgrammeur(ProgrammeurBean prog) {
+    @Override
+    public void modifyProgrammeur(ProgrammeurBean prog) throws SQLException{
  
         try {
             pstmt = dbConn.prepareStatement(Const.REQUETE_UPDATE);
-            pstmt.setString(2, prog.getNom());
-            pstmt.setString(3, prog.getPrenom());
-            pstmt.setString(4, prog.getAdresse());
-            pstmt.setString(5, prog.getPseudo());
-            pstmt.setString(6, prog.getResponsable());
-            pstmt.setString(7, prog.getHobby());
-            pstmt.setDate(8, new java.sql.Date(prog.getDate_naiss().getTime()));
-            pstmt.setDate(9, new java.sql.Date(prog.getDate_emb().getTime()));
+            pstmt.setString(1, prog.getNom());
+            pstmt.setString(2, prog.getPrenom());
+            pstmt.setString(3, prog.getAdresse());
+            pstmt.setString(4, prog.getPseudo());
+            pstmt.setString(5, prog.getResponsable());
+            pstmt.setString(6, prog.getHobby());
+            pstmt.setDate(7, new java.sql.Date(prog.getDate_naiss().getTime()));
+            pstmt.setDate(8, new java.sql.Date(prog.getDate_emb().getTime()));
+            pstmt.setInt(9, prog.getMatricule());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw e;
         }
     }
 
@@ -175,6 +185,7 @@ public class DataTransac implements ActionsDB {
      * @return listeProg Une variable de type String
      *
      */
+    @Override
     public String afficherProgrammeurs() {
         String listeProg = "";
 
@@ -190,6 +201,7 @@ public class DataTransac implements ActionsDB {
      * Cette méthode permet de libérer les ressources liées à la base de données
      * *
      */
+    @Override
     public void fermerRessources() {
         if (dbConn != null) {
             try {

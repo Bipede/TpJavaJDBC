@@ -296,6 +296,7 @@ public class GestionVue extends GestionVueAbstraite{
         pack();
     }                       
 
+    
     private void quitterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                                
         int result = JOptionPane.showConfirmDialog(this,"Vérification" , "Voulez-vous vraiment quitter?",JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.OK_OPTION) {
@@ -309,14 +310,7 @@ public class GestionVue extends GestionVueAbstraite{
     }                                                
 
     private void modifierMenuItemActionPerformed(ActionEvent evt) {                                                 
-        layout.setVerticalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(mainPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        
     }                                                
 
     private void supprimerMenuItemActionPerformed(ActionEvent evt) {                                                  
@@ -362,20 +356,20 @@ public class GestionVue extends GestionVueAbstraite{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GestionVueProg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionVue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GestionVueProg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionVue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GestionVueProg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionVue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GestionVueProg.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GestionVue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GestionVueProg().setVisible(true);
+                new GestionVue().setVisible(true);
             }
         });
     }

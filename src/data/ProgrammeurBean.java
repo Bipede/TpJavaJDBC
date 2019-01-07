@@ -22,6 +22,7 @@ public class ProgrammeurBean {
     private String responsable;
     private Date date_emb;
     private String hobby;
+    private int matricule; 
 
     public ProgrammeurBean() {
     }
@@ -124,6 +125,14 @@ public class ProgrammeurBean {
 
     public void setPseudo(String pseudo) {
         this.pseudo = pseudo;
+    }
+
+    int getMatricule() {
+        return matricule;
+    }
+    
+    public void setMatricule(int matricule) {
+        this.matricule = matricule;
     }
 
 }

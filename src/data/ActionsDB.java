@@ -6,6 +6,7 @@
 package data;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -16,9 +17,9 @@ public interface ActionsDB {
     public ResultSet getResultSet(String req);
     public ArrayList getProgrammeurs();
     public ProgrammeurBean getProgrammeur(int id);
-    public void deleteProgrammeur(int id);
-    public void addProgrammeur(ProgrammeurBean prog);
+    public void deleteProgrammeur(int id) throws SQLException;
+    public void addProgrammeur(ProgrammeurBean prog) throws SQLException;
     public String afficherProgrammeurs();
     public void fermerRessources();
-    public void modifyProgrammeur(ProgrammeurBean prog);
+    public void modifyProgrammeur(ProgrammeurBean prog) throws SQLException;
 }
