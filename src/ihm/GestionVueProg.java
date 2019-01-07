@@ -66,16 +66,16 @@ public class GestionVueProg extends javax.swing.JFrame {
         hobbyTextField = new javax.swing.JTextField();
         prenomTextField = new javax.swing.JTextField();
         pseudoTextField = new javax.swing.JTextField();
-        jourNaissTextField = new javax.swing.JTextField();
-        jourEmbTextField = new javax.swing.JTextField();
-        anneeNaissTextField = new javax.swing.JTextField();
-        anneeEmbTextField = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         rechercherButton = new javax.swing.JButton();
         reinitButton = new javax.swing.JButton();
         validerButton = new javax.swing.JButton();
         annulerButton = new javax.swing.JButton();
+        jourNaissTextField = new javax.swing.JFormattedTextField();
+        jourEmbTextField = new javax.swing.JFormattedTextField();
+        anneeNaissTextField = new javax.swing.JFormattedTextField();
+        anneeEmbTextField = new javax.swing.JFormattedTextField();
         displayPanel = new javax.swing.JPanel();
         ScrollPane = new javax.swing.JScrollPane();
         progsTextArea = new javax.swing.JTextArea();
@@ -100,7 +100,7 @@ public class GestionVueProg extends javax.swing.JFrame {
         defaultPanel.setLayout(defaultPanelLayout);
         defaultPanelLayout.setHorizontalGroup(
             defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
+            .addGap(0, 619, Short.MAX_VALUE)
         );
         defaultPanelLayout.setVerticalGroup(
             defaultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +126,7 @@ public class GestionVueProg extends javax.swing.JFrame {
                 .addComponent(matriculeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(matriculeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 462, Short.MAX_VALUE))
+                .addGap(0, 474, Short.MAX_VALUE))
         );
         matriculeSubPanelLayout.setVerticalGroup(
             matriculeSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,14 +150,6 @@ public class GestionVueProg extends javax.swing.JFrame {
         naissLabel.setText("Date de naissance");
 
         embLabel.setText("Date d'embauche");
-
-        jourNaissTextField.setToolTipText("jour");
-
-        jourEmbTextField.setToolTipText("jour");
-
-        anneeNaissTextField.setToolTipText("année");
-
-        anneeEmbTextField.setToolTipText("année");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
@@ -219,21 +211,26 @@ public class GestionVueProg extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(champsSubPanelLayout.createSequentialGroup()
-                                .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(prenomTextField)
-                                    .addComponent(pseudoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                                    .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jourEmbTextField)
+                                .addGap(75, 75, 75)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(anneeEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37))
                             .addGroup(champsSubPanelLayout.createSequentialGroup()
-                                .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(anneeNaissTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                            .addComponent(anneeEmbTextField))
-                        .addGap(37, 37, 37))
+                                .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(champsSubPanelLayout.createSequentialGroup()
+                                        .addComponent(jourNaissTextField)
+                                        .addGap(75, 75, 75))
+                                    .addGroup(champsSubPanelLayout.createSequentialGroup()
+                                        .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(prenomTextField)
+                                            .addComponent(pseudoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(100, 100, 100))))
                     .addGroup(champsSubPanelLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(rechercherButton)
@@ -243,7 +240,7 @@ public class GestionVueProg extends javax.swing.JFrame {
                         .addComponent(validerButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(annulerButton)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(152, Short.MAX_VALUE))))
         );
         champsSubPanelLayout.setVerticalGroup(
             champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,17 +262,17 @@ public class GestionVueProg extends javax.swing.JFrame {
                     .addComponent(responsableLabel)
                     .addComponent(naissLabel)
                     .addComponent(responsableTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jourNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(anneeNaissTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hobbyLabel)
                     .addComponent(embLabel)
                     .addComponent(hobbyTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jourEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(anneeEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(anneeEmbTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(champsSubPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rechercherButton)
@@ -284,8 +281,6 @@ public class GestionVueProg extends javax.swing.JFrame {
                     .addComponent(annulerButton))
                 .addContainerGap())
         );
-
-        jourNaissTextField.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout fieldsPanelLayout = new javax.swing.GroupLayout(fieldsPanel);
         fieldsPanel.setLayout(fieldsPanelLayout);
@@ -315,7 +310,7 @@ public class GestionVueProg extends javax.swing.JFrame {
             displayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(displayPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(ScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
                 .addContainerGap())
         );
         displayPanelLayout.setVerticalGroup(
@@ -396,128 +391,6 @@ public class GestionVueProg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherButtonActionPerformed
-        if(isModifier) {
-            prog = dt.getProgrammeur(Integer.parseInt(matriculeTextField.getText()));
-            if(prog != null) {
-                nomTextField.setText(prog.getNom());
-                prenomTextField.setText(prog.getPrenom());
-                adresseTextField.setText(prog.getAdresse());
-                pseudoTextField.setText(prog.getPseudo());
-                responsableTextField.setText(prog.getResponsable());
-                hobbyTextField.setText(prog.getHobby());
-                
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(prog.getDate_naiss());
-                jourNaissTextField.setText(Integer.toString(cal.get(Calendar.DAY_OF_MONTH)));
-                jComboBox1.setSelectedIndex((cal.get(Calendar.MONTH)));
-                anneeNaissTextField.setText(Integer.toString(cal.get(Calendar.YEAR)));
-                cal.setTime(prog.getDate_emb());
-                jourEmbTextField.setText(Integer.toString(cal.get(Calendar.DAY_OF_MONTH)));
-                jComboBox2.setSelectedIndex((cal.get(Calendar.MONTH)));
-                anneeEmbTextField.setText(Integer.toString(cal.get(Calendar.YEAR)));
-                
-                reinitButton.setEnabled(true);
-                validerButton.setEnabled(true);
-            }
-            else {
-                JOptionPane.showMessageDialog(this, "Programmeur introuvable", "Echec", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_rechercherButtonActionPerformed
-
-    private void reinitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitButtonActionPerformed
-        matriculeTextField.setText("0");
-        nomTextField.setText("");
-        adresseTextField.setText("");
-        responsableTextField.setText("");
-        hobbyTextField.setText("");
-        prenomTextField.setText("");
-        pseudoTextField.setText("");
-        jourNaissTextField.setText("");
-        jourEmbTextField.setText("");
-        anneeNaissTextField.setText("");
-        anneeEmbTextField.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-    }//GEN-LAST:event_reinitButtonActionPerformed
-
-    private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
-        if(isAjouter) {
-            prog = new ProgrammeurBean();
-            prog.setMatricule(Integer.parseInt(matriculeTextField.getText()));
-            prog.setNom(nomTextField.getText());
-            prog.setPrenom(prenomTextField.getText());
-            prog.setAdresse(adresseTextField.getText());
-            prog.setResponsable(responsableTextField.getText());
-            prog.setHobby(hobbyTextField.getText());
-            prog.setPseudo(pseudoTextField.getText());
-            Calendar cal = Calendar.getInstance();
-            cal.setTimeInMillis(0);
-            cal.set(Integer.parseInt(anneeNaissTextField.getText()), jComboBox1.getSelectedIndex() + 1, Integer.parseInt(jourNaissTextField.getText()));
-            prog.setDate_naiss(cal.getTime());
-            cal.set(Integer.parseInt(anneeEmbTextField.getText()), jComboBox2.getSelectedIndex() + 1, Integer.parseInt(jourEmbTextField.getText()));
-            prog.setDate_emb(cal.getTime());
-            
-            try {
-                dt.addProgrammeur(prog);
-                JOptionPane.showMessageDialog(this, "Ajout réussi!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
-            }
-            catch(SQLException e) {
-                JOptionPane.showMessageDialog(this, "Erreur d'ajout", "Echec", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        else if(isModifier) {
-            prog.setNom(nomTextField.getText());
-            prog.setPrenom(prenomTextField.getText());
-            prog.setAdresse(adresseTextField.getText());
-            prog.setResponsable(responsableTextField.getText());
-            prog.setHobby(hobbyTextField.getText());
-            prog.setPseudo(pseudoTextField.getText());
-            Calendar cal = Calendar.getInstance();
-            cal.setTimeInMillis(0);
-            cal.set(Integer.parseInt(anneeNaissTextField.getText()), jComboBox1.getSelectedIndex() + 1, Integer.parseInt(jourNaissTextField.getText()));
-            prog.setDate_naiss(cal.getTime());
-            cal.set(Integer.parseInt(anneeEmbTextField.getText()), jComboBox2.getSelectedIndex() + 1, Integer.parseInt(jourEmbTextField.getText()));
-            prog.setDate_emb(cal.getTime());
-            
-            try {
-                dt.modifyProgrammeur(prog);
-                JOptionPane.showMessageDialog(this, "Modification réussie!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
-            }
-            catch(SQLException e) {
-                JOptionPane.showMessageDialog(this, "Erreur de modification", "Echec", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        else {
-            try {
-                dt.deleteProgrammeur(Integer.parseInt(matriculeTextField.getText()));
-                JOptionPane.showMessageDialog(this, "Suppression réussie!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
-            }
-            catch(SQLException e) {
-                JOptionPane.showMessageDialog(this, "Erreur de suppression", "Echec", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }//GEN-LAST:event_validerButtonActionPerformed
-
-    private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
-        matriculeTextField.setText("0");
-        nomTextField.setText("");
-        adresseTextField.setText("");
-        responsableTextField.setText("");
-        hobbyTextField.setText("");
-        prenomTextField.setText("");
-        pseudoTextField.setText("");
-        jourNaissTextField.setText("");
-        jourEmbTextField.setText("");
-        anneeNaissTextField.setText("");
-        anneeEmbTextField.setText("");
-        jComboBox1.setSelectedIndex(0);
-        jComboBox2.setSelectedIndex(0);
-        cardLayout = (CardLayout)mainPanel.getLayout();
-        cardLayout.show(mainPanel, "defaultPanel");
-    }//GEN-LAST:event_annulerButtonActionPerformed
-
     private void afficherMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherMenuItemActionPerformed
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "displayPanel");
@@ -573,6 +446,128 @@ public class GestionVueProg extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_quitterMenuItemActionPerformed
 
+    private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
+        matriculeTextField.setText("0");
+        nomTextField.setText("");
+        adresseTextField.setText("");
+        responsableTextField.setText("");
+        hobbyTextField.setText("");
+        prenomTextField.setText("");
+        pseudoTextField.setText("");
+        jourNaissTextField.setText("");
+        jourEmbTextField.setText("");
+        anneeNaissTextField.setText("");
+        anneeEmbTextField.setText("");
+        jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);
+        cardLayout = (CardLayout)mainPanel.getLayout();
+        cardLayout.show(mainPanel, "defaultPanel");
+    }//GEN-LAST:event_annulerButtonActionPerformed
+
+    private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
+        if(isAjouter) {
+            prog = new ProgrammeurBean();
+            prog.setMatricule(Integer.parseInt(matriculeTextField.getText()));
+            prog.setNom(nomTextField.getText());
+            prog.setPrenom(prenomTextField.getText());
+            prog.setAdresse(adresseTextField.getText());
+            prog.setResponsable(responsableTextField.getText());
+            prog.setHobby(hobbyTextField.getText());
+            prog.setPseudo(pseudoTextField.getText());
+            Calendar cal = Calendar.getInstance();
+            cal.setTimeInMillis(0);
+            cal.set(Integer.parseInt(anneeNaissTextField.getText()), jComboBox1.getSelectedIndex() + 1, Integer.parseInt(jourNaissTextField.getText()));
+            prog.setDate_naiss(cal.getTime());
+            cal.set(Integer.parseInt(anneeEmbTextField.getText()), jComboBox2.getSelectedIndex() + 1, Integer.parseInt(jourEmbTextField.getText()));
+            prog.setDate_emb(cal.getTime());
+
+            try {
+                dt.addProgrammeur(prog);
+                JOptionPane.showMessageDialog(this, "Ajout réussi!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(SQLException e) {
+                JOptionPane.showMessageDialog(this, "Erreur d'ajout", "Echec", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else if(isModifier) {
+            prog.setNom(nomTextField.getText());
+            prog.setPrenom(prenomTextField.getText());
+            prog.setAdresse(adresseTextField.getText());
+            prog.setResponsable(responsableTextField.getText());
+            prog.setHobby(hobbyTextField.getText());
+            prog.setPseudo(pseudoTextField.getText());
+            Calendar cal = Calendar.getInstance();
+            cal.setTimeInMillis(0);
+            cal.set(Integer.parseInt(anneeNaissTextField.getText()), jComboBox1.getSelectedIndex() + 1, Integer.parseInt(jourNaissTextField.getText()));
+            prog.setDate_naiss(cal.getTime());
+            cal.set(Integer.parseInt(anneeEmbTextField.getText()), jComboBox2.getSelectedIndex() + 1, Integer.parseInt(jourEmbTextField.getText()));
+            prog.setDate_emb(cal.getTime());
+
+            try {
+                dt.modifyProgrammeur(prog);
+                JOptionPane.showMessageDialog(this, "Modification réussie!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(SQLException e) {
+                JOptionPane.showMessageDialog(this, "Erreur de modification", "Echec", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else {
+            try {
+                dt.deleteProgrammeur(Integer.parseInt(matriculeTextField.getText()));
+                JOptionPane.showMessageDialog(this, "Suppression réussie!", "Succès!", JOptionPane.INFORMATION_MESSAGE);
+            }
+            catch(SQLException e) {
+                JOptionPane.showMessageDialog(this, "Erreur de suppression", "Echec", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_validerButtonActionPerformed
+
+    private void reinitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitButtonActionPerformed
+        matriculeTextField.setText("0");
+        nomTextField.setText("");
+        adresseTextField.setText("");
+        responsableTextField.setText("");
+        hobbyTextField.setText("");
+        prenomTextField.setText("");
+        pseudoTextField.setText("");
+        jourNaissTextField.setText("");
+        jourEmbTextField.setText("");
+        anneeNaissTextField.setText("");
+        anneeEmbTextField.setText("");
+        jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);
+    }//GEN-LAST:event_reinitButtonActionPerformed
+
+    private void rechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherButtonActionPerformed
+        if(isModifier) {
+            prog = dt.getProgrammeur(Integer.parseInt(matriculeTextField.getText()));
+            if(prog != null) {
+                nomTextField.setText(prog.getNom());
+                prenomTextField.setText(prog.getPrenom());
+                adresseTextField.setText(prog.getAdresse());
+                pseudoTextField.setText(prog.getPseudo());
+                responsableTextField.setText(prog.getResponsable());
+                hobbyTextField.setText(prog.getHobby());
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(prog.getDate_naiss());
+                jourNaissTextField.setText(Integer.toString(cal.get(Calendar.DAY_OF_MONTH)));
+                jComboBox1.setSelectedIndex((cal.get(Calendar.MONTH)));
+                anneeNaissTextField.setText(Integer.toString(cal.get(Calendar.YEAR)));
+                cal.setTime(prog.getDate_emb());
+                jourEmbTextField.setText(Integer.toString(cal.get(Calendar.DAY_OF_MONTH)));
+                jComboBox2.setSelectedIndex((cal.get(Calendar.MONTH)));
+                anneeEmbTextField.setText(Integer.toString(cal.get(Calendar.YEAR)));
+
+                reinitButton.setEnabled(true);
+                validerButton.setEnabled(true);
+            }
+            else {
+                JOptionPane.showMessageDialog(this, "Programmeur introuvable", "Echec", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_rechercherButtonActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -583,8 +578,8 @@ public class GestionVueProg extends javax.swing.JFrame {
     private javax.swing.JMenu afficherMenu;
     private javax.swing.JMenuItem afficherMenuItem;
     private javax.swing.JMenuItem ajouterMenuItem;
-    private javax.swing.JTextField anneeEmbTextField;
-    private javax.swing.JTextField anneeNaissTextField;
+    private javax.swing.JFormattedTextField anneeEmbTextField;
+    private javax.swing.JFormattedTextField anneeNaissTextField;
     private javax.swing.JButton annulerButton;
     private javax.swing.JPanel champsSubPanel;
     private javax.swing.JPanel defaultPanel;
@@ -596,8 +591,8 @@ public class GestionVueProg extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JTextField jourEmbTextField;
-    private javax.swing.JTextField jourNaissTextField;
+    private javax.swing.JFormattedTextField jourEmbTextField;
+    private javax.swing.JFormattedTextField jourNaissTextField;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel matriculeLabel;
     private javax.swing.JPanel matriculeSubPanel;

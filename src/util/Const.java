@@ -10,6 +10,7 @@ package util;
  * @author 20180154
  */
 public class Const {
+
     public static final String URL = "jdbc:derby://localhost:1527/LSI_L3_JAVA";
     public static final String USER = "adm";
     public static final String MDP = "adm";

@@ -121,7 +121,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="619" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -171,7 +171,7 @@
                           <Component id="matriculeLabel" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="matriculeTextField" min="-2" pref="79" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="462" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="474" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -234,26 +234,34 @@
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="prenomTextField" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="pseudoTextField" alignment="0" pref="78" max="32767" attributes="0"/>
-                                              <Component id="jourNaissTextField" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Component id="jourEmbTextField" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="anneeNaissTextField" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="anneeEmbTextField" min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jourEmbTextField" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jourNaissTextField" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="prenomTextField" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="pseudoTextField" alignment="0" pref="78" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="anneeNaissTextField" alignment="0" pref="45" max="32767" attributes="0"/>
-                                      <Component id="anneeEmbTextField" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -264,7 +272,7 @@
                                   <Component id="validerButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="annulerButton" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="152" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -292,18 +300,18 @@
                               <Component id="responsableLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="naissLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="responsableTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jourNaissTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="anneeNaissTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="hobbyLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="embLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="hobbyTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jourEmbTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="anneeEmbTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="40" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -369,29 +377,6 @@
                 <Component class="javax.swing.JTextField" name="prenomTextField">
                 </Component>
                 <Component class="javax.swing.JTextField" name="pseudoTextField">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jourNaissTextField">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="jour"/>
-                  </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
-                  </AccessibilityProperties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jourEmbTextField">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="jour"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="anneeNaissTextField">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="ann&#xe9;e"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="anneeEmbTextField">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value="ann&#xe9;e"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jComboBox1">
                   <Properties>
@@ -471,6 +456,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="annulerButtonActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JFormattedTextField" name="jourNaissTextField">
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="jourEmbTextField">
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="anneeNaissTextField">
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="anneeEmbTextField">
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -487,7 +480,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ScrollPane" pref="587" max="32767" attributes="0"/>
+                      <Component id="ScrollPane" pref="599" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>

@@ -124,6 +124,11 @@ public class DataTransac implements ActionsDB {
         return prog;
     }
     
+    /**
+     *
+     * @param matricule
+     * @throws SQLException
+     */
     @Override
     public void deleteProgrammeur(int matricule) throws SQLException{
         try {
@@ -136,6 +141,11 @@ public class DataTransac implements ActionsDB {
         }
     }
     
+    /**
+     *
+     * @param prog
+     * @throws SQLException
+     */
     @Override
     public void addProgrammeur(ProgrammeurBean prog) throws SQLException{
  
@@ -157,6 +167,11 @@ public class DataTransac implements ActionsDB {
         }
     }
     
+    /**
+     *
+     * @param prog
+     * @throws SQLException
+     */
     @Override
     public void modifyProgrammeur(ProgrammeurBean prog) throws SQLException{
  

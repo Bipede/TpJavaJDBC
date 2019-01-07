@@ -14,6 +14,8 @@ import java.util.ArrayList;
  * @author 20180154
  */
 public interface ActionsDB {
+
+    
     public ResultSet getResultSet(String req);
     public ArrayList getProgrammeurs();
     public ProgrammeurBean getProgrammeur(int id);
