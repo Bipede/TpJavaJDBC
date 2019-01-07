@@ -436,6 +436,7 @@ public class test extends javax.swing.JFrame {
 
     private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
         if(isAjouter) {
+            prog = new ProgrammeurBean();
             prog.setNom(nomTextField.getText());
             prog.setPrenom(prenomTextField.getText());
             prog.setAdresse(adresseTextField.getText());

@@ -41,11 +41,11 @@ public class ProgrammeurBean {
 
     @Override
     public String toString() {
-        String affichage = "Prénom : " + this.getPrenom() + "\n"
+        String affichage = "Matricule : " + this.getMatricule() + "\n"
                 + "Nom : " + this.getNom() + "\n"
-                + "ID : " + this.getId() + "\n"
-                + "Pseudo : " + this.getPseudo() + "\n"
+                + "Prénom : " + this.getPrenom() + "\n"
                 + "Adresse : " + this.getAdresse() + "\n"
+                + "Pseudo : " + this.getPseudo() + "\n"
                 + "Responsable : " + this.getResponsable() + "\n"
                 + "Hobby : " + this.getHobby() + "\n"
                 + "Naissance : " + this.getDate_naiss() + "\n"
