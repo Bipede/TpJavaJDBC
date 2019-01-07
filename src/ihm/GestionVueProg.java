@@ -10,22 +10,30 @@ import data.ProgrammeurBean;
 import java.awt.CardLayout;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
  * @author 20180154
  */
-public class test extends javax.swing.JFrame {
+public class GestionVueProg extends javax.swing.JFrame {
 
     /**
-     * Creates new form test
+     * Creates new form GestionVueProg
      */
-    public test() {
+    public GestionVueProg() {
+        try { 
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"); 
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) { 
+            ex.printStackTrace(); 
+        }
         initComponents();
+        
         dt = new DataTransac();
+        
+        this.setVisible(true);
     }
 
     /**
@@ -437,6 +445,7 @@ public class test extends javax.swing.JFrame {
     private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
         if(isAjouter) {
             prog = new ProgrammeurBean();
+            prog.setMatricule(Integer.parseInt(matriculeTextField.getText()));
             prog.setNom(nomTextField.getText());
             prog.setPrenom(prenomTextField.getText());
             prog.setAdresse(adresseTextField.getText());
@@ -559,47 +568,12 @@ public class test extends javax.swing.JFrame {
         int result = JOptionPane.showConfirmDialog(this,"Vérification" , "Voulez-vous vraiment quitter?",JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.OK_OPTION) {
             dt.fermerRessources();
-            //ferme
+            //ferme la fenêtre
             this.dispose();
         }
     }//GEN-LAST:event_quitterMenuItemActionPerformed
 
     
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new test().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane ScrollPane;

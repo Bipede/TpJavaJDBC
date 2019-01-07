@@ -5,8 +5,6 @@
  */
 package ihm;
 
-import data.DataTransac;
-import data.ProgrammeurBean;
 
 /**
  *
@@ -18,10 +16,7 @@ public class Start {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        DataTransac dt = new DataTransac();
-//        dt.addProgrammeur(new ProgrammeurBean(123, "jean", "sbthre", "18 ruesde", "shsgqz", "gqzgqzgqr", "sdfgergzg", new java.util.Date(), new java.util.Date()));
-//        System.out.println(dt.afficherProgrammeurs());
-        test vue = new test();
+        GestionVueProg vue = new GestionVueProg();
         vue.setVisible(true);
     }
     
