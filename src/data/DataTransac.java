@@ -16,10 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import util.Const;
 
-/**
- *
- * @author 20180154
- */
+
 public class DataTransac implements ActionsDB {
     private Connection dbConn;
     private Statement stmt;
@@ -42,7 +39,7 @@ public class DataTransac implements ActionsDB {
     }
 
     /**
-     * Lance la récupère passée en paramètre et retourne le ResultSet
+     * Lance et récupère la requête passée en paramètre et retourne le ResultSet
      * correspondant à cette requête
      *
      * @param req La requête SQL que l'on souhaite exécuter
@@ -61,7 +58,7 @@ public class DataTransac implements ActionsDB {
 
     /**
      * Cette méthode récupère toutes les infos d'un programmeur et retourne une
-     * liste de l'ensemble des programmeurs
+     * liste de l'ensemble des programmeurs issue de la bdd
      *
      * @return listeProgrammeurs Une variable de type ArryList
      */
@@ -125,7 +122,9 @@ public class DataTransac implements ActionsDB {
     }
     
     /**
-     *
+     *Cette méthode supprime le programmeur de la bdd. Cette méthode est utilisé 
+     * pour rechercher un programmeur via son matricule
+     * 
      * @param matricule
      * @throws SQLException
      */
@@ -142,7 +141,9 @@ public class DataTransac implements ActionsDB {
     }
     
     /**
-     *
+     * Cette méthode ajouter un programmeur à la bdd. Cette méthode utilise un 
+     * programmeur sous la forme d'un Java Bean
+     * 
      * @param prog
      * @throws SQLException
      */
@@ -168,7 +169,8 @@ public class DataTransac implements ActionsDB {
     }
     
     /**
-     *
+     * Cette méthode modifie le programmeur que l'utilisateur souhaite editer.
+     * 
      * @param prog
      * @throws SQLException
      */

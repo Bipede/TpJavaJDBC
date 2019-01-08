@@ -16,7 +16,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author 20180154
+ * @author Stephanie
  */
 public class GestionVueProg extends javax.swing.JFrame {
 
@@ -391,6 +391,12 @@ public class GestionVueProg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Cette méthode affiche l'ecran avec la lsite des programmeurs lorsque l'on 
+     * selectionne le menuItem Programmeur -> afficher -> Tous
+     * 
+     * @param evt
+     */
     private void afficherMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherMenuItemActionPerformed
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "displayPanel");
@@ -398,6 +404,12 @@ public class GestionVueProg extends javax.swing.JFrame {
         progsTextArea.setText(dt.afficherProgrammeurs());
     }//GEN-LAST:event_afficherMenuItemActionPerformed
 
+    /**
+     * Cette methode affiche l'ecran pour modifier un programmeur lorsqu'on 
+     * selectionne le menuItem Programmeur -> modifier
+     * 
+     * @param evt 
+     */
     private void modifierMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierMenuItemActionPerformed
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "fieldsPanel");
@@ -411,6 +423,12 @@ public class GestionVueProg extends javax.swing.JFrame {
         isModifier = true;
     }//GEN-LAST:event_modifierMenuItemActionPerformed
 
+    /**
+     * Cette méthode afficher l'ecran pour supprimer un programmeur lorsqu'on 
+     * selectionne le menuItem Programmeur -> supprimer
+     * 
+     * @param evt 
+     */
     private void supprimerMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerMenuItemActionPerformed
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "fieldsPanel");
@@ -424,6 +442,12 @@ public class GestionVueProg extends javax.swing.JFrame {
         isModifier = false;
     }//GEN-LAST:event_supprimerMenuItemActionPerformed
 
+    /**
+     * Cette méthode afficher l'écran pour ajouter un programmeur lorsqu'on 
+     * selectionne le menuItem Programmeur -> ajouter 
+     * 
+     * @param evt 
+     */
     private void ajouterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterMenuItemActionPerformed
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "fieldsPanel");
@@ -437,6 +461,13 @@ public class GestionVueProg extends javax.swing.JFrame {
         isModifier = false;
     }//GEN-LAST:event_ajouterMenuItemActionPerformed
 
+    /**
+     * Cette méthode quitte l'application lorsqu'on clique sur le menuItem 
+     * Action -> Quitter
+     * Une confirmation est demandée via une boite de dialogue 
+     * 
+     * @param evt 
+     */
     private void quitterMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitterMenuItemActionPerformed
         int result = JOptionPane.showConfirmDialog(this,"Vérification" , "Voulez-vous vraiment quitter?",JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.OK_OPTION) {
@@ -446,7 +477,13 @@ public class GestionVueProg extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_quitterMenuItemActionPerformed
 
+    /**
+     * Cette méthode permet de revenir sur l'écran de bienvenue
+     * 
+     * @param evt 
+     */
     private void annulerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerButtonActionPerformed
+        // remet les champs a blanc
         matriculeTextField.setText("0");
         nomTextField.setText("");
         adresseTextField.setText("");
@@ -460,10 +497,16 @@ public class GestionVueProg extends javax.swing.JFrame {
         anneeEmbTextField.setText("");
         jComboBox1.setSelectedIndex(0);
         jComboBox2.setSelectedIndex(0);
+        // revient sur l'ércan de départ
         cardLayout = (CardLayout)mainPanel.getLayout();
         cardLayout.show(mainPanel, "defaultPanel");
     }//GEN-LAST:event_annulerButtonActionPerformed
 
+    /**
+     * Cette permet de valider l'action ajouter / modifier / supprimer 
+     * 
+     * @param evt 
+     */
     private void validerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerButtonActionPerformed
         if(isAjouter) {
             prog = new ProgrammeurBean();

@@ -17,7 +17,7 @@ public class Start {
      */
     public static void main(String[] args) {
         GestionVueProg vue = new GestionVueProg();
-        vue.setVisible(true);
+        //vue.setVisible(true);
     }
     
 }
