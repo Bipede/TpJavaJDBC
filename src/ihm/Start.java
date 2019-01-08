@@ -5,11 +5,6 @@
  */
 package ihm;
 
-
-/**
- *
- * @author 20180154
- */
 public class Start {
 
     /**
@@ -17,7 +12,6 @@ public class Start {
      */
     public static void main(String[] args) {
         GestionVueProg vue = new GestionVueProg();
-        //vue.setVisible(true);
     }
     
 }

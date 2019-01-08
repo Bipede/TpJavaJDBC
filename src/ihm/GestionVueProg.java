@@ -503,7 +503,7 @@ public class GestionVueProg extends javax.swing.JFrame {
     }//GEN-LAST:event_annulerButtonActionPerformed
 
     /**
-     * Cette permet de valider l'action ajouter / modifier / supprimer 
+     * Cette méthode permet de valider l'action ajouter/modifier/supprimer selectionné
      * 
      * @param evt 
      */
@@ -565,6 +565,11 @@ public class GestionVueProg extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_validerButtonActionPerformed
 
+    /**
+     * Cette méthode permet de remettre les tous les champs a blanc
+     * 
+     * @param evt 
+     */
     private void reinitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitButtonActionPerformed
         matriculeTextField.setText("0");
         nomTextField.setText("");
@@ -581,6 +586,11 @@ public class GestionVueProg extends javax.swing.JFrame {
         jComboBox2.setSelectedIndex(0);
     }//GEN-LAST:event_reinitButtonActionPerformed
 
+    /**
+     * Cette méthode permet de rechercher le programmeur souhaité via son 
+     * matricule
+     * @param evt 
+     */
     private void rechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rechercherButtonActionPerformed
         if(isModifier) {
             prog = dt.getProgrammeur(Integer.parseInt(matriculeTextField.getText()));
